@@ -22,7 +22,7 @@ module Cuba::Helpers
   end
 
   def layout(content)
-    partial("layout", content: content)
+    partial("layout", {:content => content})
   end
 
   def haml(template, locals = {})

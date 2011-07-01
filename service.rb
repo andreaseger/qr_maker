@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'cuba'
 require 'haml'
 require 'rqrcode'
