@@ -1,0 +1,26 @@
+!!! 5
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --> 
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+%head
+  %meta{:charset=>"utf-8"}
+
+  %title
+    QR Maker
+  %meta{:name=>"description", :content=>"Cuba app to generate qr codes"}
+  %link{:rel=>"stylesheet", :href=>"/main.css"}
+%body
+  .container
+    %div{:role=>"main"}
+      - if show_title?
+        %h1= section(:title)
+        %form{ :action=>"", :method=>"post", :id=>"generater_form"}
+          %p
+            %label{:name=>'text'}
+              Message
+            %input{:type=>"text", :name=>"text"}
+          %input{:type=>"submit", :value=>"Generate"}
+      = content
